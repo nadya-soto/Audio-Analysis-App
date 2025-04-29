@@ -1,0 +1,16 @@
+streamlit
+whisper
+torch
+openai-whisper
+scikit-learn
+spacy
+pandas
+sounddevice
+scipy
+textblob
+
+
+
+#run in the terminal
+#pip install -r requirements.txt
+#python -m spacy download en_core_web_sm
