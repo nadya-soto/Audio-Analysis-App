@@ -1,4 +1,3 @@
-# audio_utils.py
 import speech_recognition as sr
 from pydub import AudioSegment
 import tempfile
