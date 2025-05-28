@@ -23,7 +23,7 @@ except ImportError:
 
 
 def run_app():
-    st.title("AI Assistant - KTP Assessment")
+    st.title("AI Assistant")
 
     st.markdown("### Upload audio file" )
 
