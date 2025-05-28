@@ -2,9 +2,10 @@ streamlit
 whisper
 torch
 scikit-learn
-spacy
-SpeechRecognition
 pydub
 pandas
 scipy
 textblob
+spacy
+en-core-web-sm
+SpeechRecognition
