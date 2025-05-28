@@ -4,13 +4,6 @@ import spacy
 from spacy.cli import download
 import os
 
-data_train_path = os.path.join("data", "train.csv")
-data_test_path = os.path.join("data", "test.csv")
-
-train_df = pd.read_csv(data_train_path)
-test_df = pd.read_csv(data_test_path, header=None)
-
-
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
