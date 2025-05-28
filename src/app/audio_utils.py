@@ -1,20 +1,20 @@
 # audio_utils.py
-import os
-import whisper
+import speech_recognition as sr
+from pydub import AudioSegment
 import tempfile
 
-# Asegúrate de que ffmpeg esté instalado si usas formatos distintos a WAV
-# En Streamlit Cloud suele estar preinstalado
-
-# Carga el modelo una vez
-model = whisper.load_model("base")
-
 def transcribe_audio(file):
-    """Convierte audio subido a texto usando Whisper"""
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp:
-        tmp.write(file.read())
-        tmp_path = tmp.name
+    recognizer = sr.Recognizer()
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio:
+        sound = AudioSegment.from_file(file)
+        sound.export(temp_audio.name, format="wav")
 
-    result = model.transcribe(tmp_path)
-    os.remove(tmp_path)
-    return result['text']
+        with sr.AudioFile(temp_audio.name) as source:
+            audio = recognizer.record(source)
+
+        try:
+            return recognizer.recognize_google(audio)
+        except sr.UnknownValueError:
+            return "No se pudo entender el audio."
+        except sr.RequestError as e:
+            return f"Error del servicio de reconocimiento: {e}"
