@@ -1,5 +1,5 @@
 streamlit
-whisper==1.1.10
+whisper
 torch
 scikit-learn
 spacy
@@ -7,4 +7,3 @@ pandas
 sounddevice
 scipy
 textblob
-

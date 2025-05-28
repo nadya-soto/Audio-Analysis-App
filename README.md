@@ -98,10 +98,7 @@ streamlit run src/main.py
 
 
 
-#run in the terminal
-#pip install -r requirements.txt
-#python -m spacy download en_core_web_sm
-#Lanza la app 
+
 # exit
 # pip install -r requirements.txt
 # python -m spacy download en_core_web_sm
