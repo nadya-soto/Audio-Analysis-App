@@ -107,3 +107,4 @@ streamlit run src/main.py
 # python -m spacy download en_core_web_sm
 # y luego corre la app 
 # streamlit run src\main.py
+
