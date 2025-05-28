@@ -4,6 +4,5 @@ torch
 scikit-learn
 spacy
 pandas
-sounddevice
 scipy
 textblob
